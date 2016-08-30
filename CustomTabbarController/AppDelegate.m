@@ -74,9 +74,9 @@
     return YES;
 }
 
-- (void)tabBar:(CLQTabbarController *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to
+- (BOOL)tabBar:(CLQTabbarController *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to
 {
-    
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

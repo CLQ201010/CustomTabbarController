@@ -103,7 +103,9 @@
 - (void)btnClick:(CLQTabbarButton *)sender
 {
     if ([self.clqDelegate respondsToSelector:@selector(tabBar:didSelectedButtonFrom:to:)]) {
-        [self.clqDelegate tabBar:self didSelectedButtonFrom:self.selectedBtn.tag to:sender.tag];
+        if ([self.clqDelegate tabBar:self didSelectedButtonFrom:self.selectedBtn.tag to:sender.tag]) {
+            return;
+        };
     }
     
     //1.先将之前选中的按钮设置为未选中

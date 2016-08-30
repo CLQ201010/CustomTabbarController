@@ -13,7 +13,7 @@
 
 @optional
 
-- (void)tabBar:(CLQTabbarController *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to;
+- (BOOL)tabBar:(CLQTabbarController *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to;
 
 @end
 

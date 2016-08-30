@@ -7,6 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "CLQTabbarController.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "ThirdViewController.h"
+#import "FourthViewController.h"
+#import "FifthViewController.h"
+#import "CLQTabbarModel.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +23,53 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    FirstViewController *firstVC = [[FirstViewController alloc] init];
+    CLQTabbarModel *firstModel = [[CLQTabbarModel alloc] init];
+    firstModel.title = @"First";
+    firstModel.normalImg = [UIImage imageNamed:@"tabbar_home"];
+    firstModel.selectedImg = [UIImage imageNamed:@"tabbar_homeHL"];
+    
+    SecondViewController *secndVC = [[SecondViewController alloc] init];
+    CLQTabbarModel *secondModel = [[CLQTabbarModel alloc] init];
+    secondModel.title = @"Second";
+    secondModel.normalImg = [UIImage imageNamed:@"tabbar_home"];
+    secondModel.selectedImg = [UIImage imageNamed:@"tabbar_homeHL"];
+    secondModel.topMargin = 5;
+    secondModel.imgHeight = 30;
+    
+    ThirdViewController *thirdVC = [[ThirdViewController alloc] init];
+    CLQTabbarModel *thirdModel = [[CLQTabbarModel alloc] init];
+    thirdModel.normalImg = [UIImage imageNamed:@"tabbar_add"];
+    thirdModel.selectedImg = [UIImage imageNamed:@"tabbar_addHL"];
+    thirdModel.imgHeight = 40;
+    thirdModel.topMargin = 4;
+    
+    FourthViewController *fourthVC = [[FourthViewController alloc] init];
+    CLQTabbarModel *fourthModel = [[CLQTabbarModel alloc] init];
+    fourthModel.title = @"Fourth";
+    fourthModel.normalImg = [UIImage imageNamed:@"tabbar_me"];
+    fourthModel.selectedImg = [UIImage imageNamed:@"tabbar_meHL"];
+    
+    FifthViewController *fifthVC = [[FifthViewController alloc] init];
+    CLQTabbarModel *fifthModel = [[CLQTabbarModel alloc] init];
+    fifthModel.title = @"Fifth";
+    fifthModel.titleFont = [UIFont systemFontOfSize:20];
+    fifthModel.bottomMargin = 15;
+    fifthModel.imgHeight = 0;
+    fifthModel.textImgMargin = 10;
+
+    NSArray *vcs = @[firstVC,secndVC,thirdVC,fourthVC,fifthVC];
+    NSArray *models = @[firstModel,secondModel,thirdModel,fourthModel,fifthModel];
+    
+    CLQTabbarController *clqTab = [[CLQTabbarController alloc] initWithControllers:vcs tabbarModels:models];
+    self.window.rootViewController = clqTab;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

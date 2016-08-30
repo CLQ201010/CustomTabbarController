@@ -15,7 +15,7 @@
 #import "FifthViewController.h"
 #import "CLQTabbarModel.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <CLQTabbarDelegate>
 
 @end
 
@@ -66,11 +66,17 @@
     NSArray *models = @[firstModel,secondModel,thirdModel,fourthModel,fifthModel];
     
     CLQTabbarController *clqTab = [[CLQTabbarController alloc] initWithControllers:vcs tabbarModels:models];
+    clqTab.clqDelegate = self;
     self.window.rootViewController = clqTab;
     
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)tabBar:(CLQTabbarController *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to
+{
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

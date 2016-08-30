@@ -7,6 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CLQTabbarController;
+
+@protocol CLQTabbarDelegate <NSObject>
+
+@optional
+
+- (void)tabBar:(CLQTabbarController *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to;
+
+@end
+
 
 @interface CLQTabbarController : UITabBarController
 
@@ -14,6 +24,8 @@
 
 - (instancetype)initWithControllers:(NSArray *)vcs tabbarModels:(NSArray *)models;
 - (void)setCLQTabbarBackgroundImage:(UIImage *)bgImg;
+
+@property (nonatomic, weak) id<CLQTabbarDelegate> clqDelegate;
 
 @end
 

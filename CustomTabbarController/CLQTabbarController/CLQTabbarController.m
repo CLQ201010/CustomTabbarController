@@ -85,8 +85,8 @@
 - (void)setupTopLayer
 {
     _topLayer = [[CALayer alloc] init];
-    _topLayer.frame = CGRectMake(0, 0, _tabbarBgImageView.frame.size.width, 0.5f);
-    _topLayer.backgroundColor = [UIColor blackColor].CGColor;
+    _topLayer.frame = CGRectMake(0, 0, _tabbarBgImageView.frame.size.width, 0.2f);
+    _topLayer.backgroundColor = [UIColor lightGrayColor].CGColor;
     [_tabbarBgImageView.layer addSublayer:_topLayer];
 }
 
@@ -100,17 +100,21 @@
     [_tabbarBgImageView setImage:bgImg];
 }
 
-- (void)btnClick:(CLQTabbarButton *)button
+- (void)btnClick:(CLQTabbarButton *)sender
 {
+    if ([self.clqDelegate respondsToSelector:@selector(tabBar:didSelectedButtonFrom:to:)]) {
+        [self.clqDelegate tabBar:self didSelectedButtonFrom:self.selectedBtn.tag to:sender.tag];
+    }
+    
     //1.先将之前选中的按钮设置为未选中
     self.selectedBtn.selected = NO;
     //2.再将当前按钮设置为选中
-    button.selected = YES;
+    sender.selected = YES;
     //3.最后把当前按钮赋值为之前选中的按钮
-    self.selectedBtn = button;
+    self.selectedBtn = sender;
     
     //4.跳转到相应的视图控制器. (通过selectIndex参数来设置选中了那个控制器)
-    self.selectedIndex = button.tag;
+    self.selectedIndex = sender.tag;
 }
 
 - (void)didReceiveMemoryWarning {

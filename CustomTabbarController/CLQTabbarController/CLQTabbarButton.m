@@ -43,7 +43,7 @@
     
     // 2.文字布局
     self.titleLabel.sd_layout
-    .topSpaceToView(self.imageView,_tabbarModel.textImgMargin)
+    .heightIs(_tabbarModel.titleHeight)
     .bottomSpaceToView(self, _tabbarModel.bottomMargin)
     .widthRatioToView(self, 1.0)
     .centerXEqualToView(self);

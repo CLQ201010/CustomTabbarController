@@ -60,7 +60,7 @@
     fifthModel.titleFont = [UIFont systemFontOfSize:20];
     fifthModel.bottomMargin = 15;
     fifthModel.imgHeight = 0;
-    fifthModel.textImgMargin = 10;
+    fifthModel.titleHeight = 25;
 
     NSArray *vcs = @[firstVC,secndVC,thirdVC,fourthVC,fifthVC];
     NSArray *models = @[firstModel,secondModel,thirdModel,fourthModel,fifthModel];

@@ -23,9 +23,9 @@
 @property (nonatomic, strong) UIColor *normalTitleColor;
 @property (nonatomic, strong) UIColor *highlightedTitleColor;
 @property (nonatomic, strong) UIColor *selectedTitleColor;
+@property (nonatomic, assign) CGFloat titleHeight;
 
 // 间距
-@property (nonatomic, assign) CGFloat textImgMargin;  //图文间距
 @property (nonatomic, assign) CGFloat topMargin;   //图片距离顶部距离
 @property (nonatomic, assign) CGFloat bottomMargin;  //文字距离顶部距离
 

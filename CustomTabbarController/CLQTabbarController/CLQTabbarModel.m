@@ -27,13 +27,13 @@
     self.normalTitleColor = [UIColor lightGrayColor];
     self.highlightedTitleColor = [UIColor lightGrayColor];
     self.selectedTitleColor = [UIColor lightGrayColor];
+    self.titleHeight = 10;
     
     self.normalImg = nil;
     self.highlightedImg = nil;
     self.selectedImg = nil;
     self.imgHeight = 25;
     
-    self.textImgMargin = 5;
     self.topMargin = 8;
     self.bottomMargin = 3;
 }
